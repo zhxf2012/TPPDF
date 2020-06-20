@@ -8,13 +8,14 @@
 
 import UIKit
 import TPPDF
+import WebKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var webView: UIWebView!
+    @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var progressView: UIProgressView!
 
-    var progressObserver: NSObjectProtocol!
+//    var progressObserver: NSObjectProtocol!
 
     public var exampleFactory: ExampleFactory?
 
@@ -63,7 +64,7 @@ class ViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.progressView.isHidden = true
                     // Load PDF into a webview from the temporary file
-                    self.webView.loadRequest(URLRequest(url: url))
+                    self.webView.load(URLRequest(url: url))
                 }
             } catch {
                 print("Error while generating PDF: " + error.localizedDescription)

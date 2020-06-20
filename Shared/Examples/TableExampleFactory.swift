@@ -68,6 +68,7 @@ class TableExampleFactory: ExampleFactory {
         table.style = style
 
         // Style each cell individually
+        
         table[1,1].style = PDFTableCellStyle(colors: (fill: UIColor.yellow, text: UIColor.black))
 
         // Set table padding and margin
